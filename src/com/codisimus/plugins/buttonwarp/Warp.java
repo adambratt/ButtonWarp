@@ -161,6 +161,9 @@ public class Warp {
         else if (log)
             System.out.println("[ButtonWarp] "+player.getName()+" used Warp "+name);
         
+        // Call the event
+        ButtonWarp.server.getPluginManager().callEvent(new WarpEvent(name, player));
+        
         return true;
     }
     
